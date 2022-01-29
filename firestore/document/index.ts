@@ -16,10 +16,10 @@
  */
 
 // TODO fix the import
-import {DocumentReference, DocumentSnapshot, DocumentData} from '../interfaces';
+import type {DocumentReference, DocumentSnapshot, DocumentData} from '../interfaces';
 import {fromRef} from '../fromRef';
 import {map} from 'rxjs/operators';
-import {Observable} from 'rxjs';
+import type {Observable} from 'rxjs';
 
 export function doc<T=DocumentData>(ref: DocumentReference<T>): Observable<DocumentSnapshot<T>> {
   return fromRef(ref, {includeMetadataChanges: true});
